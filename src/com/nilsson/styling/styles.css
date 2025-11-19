@@ -1,0 +1,179 @@
+/*
+ * Color Palette:
+ * - Primary Dark Background: #0B0C10
+ * - Dark Accent/Secondary Background: #1F2833
+ * - Primary Theme Color (Electric Blue): #66FCF1
+ * - Secondary Accent/Button Color: #45A29E
+ * - Light Text/Grey Accent: #C5C6C7
+ */
+
+/* ---------- ROOT ---------- */
+.root {
+
+    -fx-background-image: url('background_texture.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+
+    -fx-background-color: #0B0C10;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 20;
+}
+
+/* ---------- HEADERS ---------- */
+.label.menu-title {
+    -fx-font-size: 40px;
+    -fx-text-fill: #66FCF1;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.label.add-member-title {
+    -fx-font-size: 36px;
+    -fx-text-fill: #66FCF1;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.label.stopwatch-title {
+    -fx-font-size: 36px;
+    -fx-text-fill: #66FCF1;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* ---------- LABELS ---------- */
+.label {
+    -fx-text-fill: #C5C6C7;
+    -fx-font-size: 14px;
+}
+
+/* ---------- TEXT FIELDS ---------- */
+.text-field {
+    -fx-background-color: #1F2833;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #C5C6C7;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+    -fx-border-color: #45A29E;
+    -fx-border-radius: 5;
+}
+
+/* ---------- BUTTONS ---------- */
+.button {
+    -fx-background-color: #45A29E;
+    -fx-text-fill: #0B0C10;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.button:hover {
+    -fx-background-color: #66FCF1;
+    -fx-scale-x: 1.07;
+    -fx-scale-y: 1.07;
+}
+
+.button:pressed {
+    -fx-scale-x: 0.94;
+    -fx-scale-y: 0.94;
+}
+
+/* ---------- RED BUTTONS ---------- */
+.red-button {
+    -fx-background-color: #B22222;
+    -fx-text-fill: white;
+}
+
+.red-button:hover {
+    -fx-background-color: #FF4500;
+    -fx-scale-x: 1.07;
+    -fx-scale-y: 1.07;
+    -fx-effect: dropshadow(gaussian, #66FCF1AA, 10, 0.3, 0, 0);
+}
+
+.red-button:pressed {
+    -fx-scale-x: 0.94;
+    -fx-scale-y: 0.94;
+}
+
+/* ---------- TIMER ---------- */
+.timer {
+    -fx-font-size: 100px;
+    -fx-text-fill: #66FCF1;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #66FCF188, 10, 0.3, 0, 0);
+    -fx-alignment: center;
+    -fx-padding: 20 0 20 0;
+}
+
+/* ---------- TABLE VIEW ---------- */
+.table-view {
+    -fx-background-color: #0B0C10;
+    -fx-border-color: #1F2833;
+    -fx-table-cell-border-color: #1F2833;
+}
+
+/* Header background + text */
+.table-view .column-header-background {
+    -fx-background-color: #1F2833;
+}
+
+.table-view .column-header,
+.table-view .column-header .label {
+    -fx-background-color: #1F2833;
+    -fx-text-fill: #66FCF1;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-border-color: #45A29E;
+}
+
+/* Table rows */
+.table-row-cell {
+    -fx-background-color: #0B0C10;
+    -fx-text-fill: #C5C6C7;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #1F2833;
+    -fx-text-fill: #C5C6C7;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #66FCF133;
+    -fx-text-fill: #FFFFFF;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #45A29E88;
+    -fx-text-fill: white;
+}
+
+.table-cell {
+    -fx-text-fill: #C5C6C7;
+}
+
+.table-cell:selected {
+    -fx-text-fill: white;
+}
+
+/* ---------- SCROLL BARS ---------- */
+.scroll-bar {
+    -fx-background-color: #1F2833;
+}
+
+/* ---------- FORM HEADERS IN MEMBERS & TIMER ---------- */
+.add-member-title, .stopwatch-title {
+    -fx-font-size: 36px;
+    -fx-text-fill: #66FCF1;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* ---------- BACK/RESET/EXIT BUTTON POSITION ---------- */
+.back-button, .reset-button, .exit-button {
+    -fx-background-color: #B22222;
+    -fx-text-fill: white;
+}
