@@ -1,48 +1,75 @@
-# Members & Stopwatch (JavaFX)
+# Members Registry & Stopwatch Suite
 
-A small JavaFX application that manages a list of members and includes a basic stopwatch tool.
+![Java](https://img.shields.io/badge/Java-8%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![JavaFX](https://img.shields.io/badge/JavaFX-Code--First-4285F4?style=for-the-badge&logo=java&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-Styling-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Jackson](https://img.shields.io/badge/Persistence-Jackson_JSON-2f2f2f?style=for-the-badge&logo=json&logoColor=white)
 
-## Features
+A dual-function desktop application built with **JavaFX** that demonstrates robust data persistence and real-time UI handling.
 
-  - Add, save, and remove members (first name, last name, phone, address).
-  - Members are stored locally in `members.json` for persistence between runs.
-  - Styled member table with automatic updates on load, save, and removal.
-  - Stopwatch with start, stop, and reset functionality.
-  - Simple navigation between views.
+This project was built to demonstrate **Object-Oriented Design patterns**, **MVC architecture**, and **programmatic UI development** (Pure JavaFX without FXML).
 
-## Project Structure
+---
 
+## ✨ Key Features
+
+* **Member Management:** A persistent CRUD system for managing member profiles (Name, Phone, Email, ID).
+* **Data Persistence:** Automatic serialization/deserialization of Java objects to JSON using Jackson Databind.
+* **Precision Stopwatch:** A dedicated stopwatch tool utilizing `AnimationTimer` for accurate, high-frequency time tracking (60 FPS).
+* **Concurrency:** Separated UI logic from timing threads to ensure a responsive interface.
+* **Dynamic Styling:** Centralized CSS styling for consistent application theming.
+
+---
+
+## 🛠️ Technical Architecture
+
+The application follows a **Model-View-Controller (MVC)** architecture to ensure separation of concerns.
+
+### Design Patterns Implemented
+* **MVC Pattern:** Strictly separates the data (`Member`), the interface (`MembersView`), and the logic (`MembersController`).
+* **Repository Pattern:** The `MemberRepository` handles all data retrieval and storage, decoupling the file I/O details from the business logic.
+* **Observer Pattern:** Used implicitly by JavaFX components to update the UI when underlying data models change.
+
+### Technology Stack
+* **Core:** Java 8+, JavaFX (Programmatic DOM, No FXML)
+* **Persistence:** Jackson (JSON Data Binding)
+* **Build Tool:** Maven
+* **UI Assets:** Custom CSS Theming
+
+---
+
+## 🚀 Getting Started
+
+To run the application locally:
+
+1.  **Clone the repository**
+2.  **Build with Maven:**
+    ```bash
+    mvn clean install
+    ```
+3.  **Run:**
+    ```bash
+    mvn javafx:run
+    ```
+
+---
+
+## 📂 Project Structure
 
 ```
-src/
- └── com.nilsson
-     ├── application/      # Main JavaFX entry point
-     ├── controller/       # UI controllers
-     ├── model/            # Data model classes (Member)
-     ├── repository/       # JSON file handling (MemberRepository)
-     └── view/             # JavaFX views (Menu, Members, Stopwatch)
-resources/
- └── com/nilsson/styling/  # CSS styles
+src/com/nilsson
+├── application/    # Application Entry Point
+├── controller/     # Event Handling & Logic bridging
+├── model/          # Data Entities (POJOs)
+├── repository/     # JSON File I/O & Persistence
+├── view/           # Pure JavaFX Layouts (No FXML)
+└── styling/        # CSS Resources & Assets
 ```
 
-## How It Works
+---
 
-  - **Persistence:** Member data is loaded from and written to `members.json` using the **Jackson Databind library**. This provides robust, reliable conversion between JSON and the `Member` Java objects.
-  - **Member View:** `MembersView` displays the input form and the table; `MembersController` handles validation, saving members via the `MemberRepository`, and updating the list.
-  - **Stopwatch:** `StopwatchView` is updated in real-time using an `AnimationTimer` controlled by `StopwatchController`.
-  - **Styling:** All screens share a common CSS theme.
+## 📜 License
 
-## Run the Project
+This project was developed for educational purposes as part of a System Development course. Distributed under the **MIT License**.
 
-Requires:
-
-  - Java 8 (with bundled JavaFX or OpenJFX 8)
-  - Jackson Databind (JAR files included in the project's `lib` directory)
-
-Run using:
-mvn javafx:run
-*(Note: If not using Maven, run the compiled JAR with the appropriate classpath and module/bootclasspath arguments for JavaFX.)*
-
-## License
-
-MIT
+---
